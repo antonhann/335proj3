@@ -2,7 +2,6 @@
 
 void stdSort (const std::string & header, std::vector<int> data){
     std::vector<int> sorted = data;
-    double percentile[5] = {0, data.size() * .25 - 1, data.size() * .5 - 1, data.size() * .75 - 1, (double)data.size() - 1};
     const auto start = std::chrono::steady_clock::now(); //start of time
     std::sort(sorted.begin(), sorted.end());
     std::cout << header << std::endl;
