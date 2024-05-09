@@ -7,4 +7,4 @@
 #include <algorithm>
 #include <chrono>
 
-void insertionSort (std::vector<int>& data);
+void insertionSort (std::vector<int>& data, int left, int right);
