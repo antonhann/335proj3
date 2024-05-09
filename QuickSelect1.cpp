@@ -35,7 +35,7 @@ void quickSelect(std::vector<int> &data, int left, int right, int k){
             quickSelect(data,i + 1, right, k);
         }
     }else{
-        insertionSort(data,left, right);
+        InsertionSort(data,left, right);
     }
 }
 

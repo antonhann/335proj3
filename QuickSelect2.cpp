@@ -44,7 +44,7 @@ void quickSelectRecursion(std::vector<int> &data, int left, int right, std::vect
         quickSelectRecursion(data, left, i - 1, keysLeft);
         quickSelectRecursion(data,i + 1, right, keysRight);
     }else{
-        insertionSort(data,left, right);
+        InsertionSort(data,left, right);
     }
 }
 void QuickSelect2 (const std::string & header, std::vector<int> data){
