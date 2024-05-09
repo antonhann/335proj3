@@ -12,6 +12,6 @@
 #include "InsertionSort.hpp"
 const int & median3Two( std::vector<int> & a, int left, int right );
 void quickSelectRecursion(std::vector<int> &data, int left, int right, std::vector<int> keys);
-void quickSelect2 (const std::string & header, std::vector<int> data);
+void QuickSelect2 (const std::string & header, std::vector<int> data);
 
 #endif 

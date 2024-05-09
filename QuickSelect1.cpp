@@ -39,7 +39,7 @@ void quickSelect(std::vector<int> &data, int left, int right, int k){
     }
 }
 
-void quickSelect1 (const std::string & header, std::vector<int> data){
+void QuickSelect1 (const std::string & header, std::vector<int> data){
     const auto start = std::chrono::steady_clock::now(); //start of time
     quickSelect(data, 0, data.size() - 1, data.size() * .50); // Index of the 50th percentile 
     quickSelect(data, 0, data.size() * .50 - 2, data.size() * .25); // Index of the 25th percentile

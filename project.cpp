@@ -25,8 +25,8 @@ int main (){
     while(file >> input){
         data.push_back(stoi(input));
     }
-    //stdSort(header, data);
-    //quickSelect1(header, data);
+    stdSort(header, data);
+    quickSelect1(header, data);
     quickSelect2(header, data);
     countingSort(header,data);
 }

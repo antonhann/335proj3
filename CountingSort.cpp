@@ -1,6 +1,6 @@
 #include "CountingSort.hpp"
 
-void countingSort (const std::string & header, std::vector<int> data){
+void CountingSort (const std::string & header, std::vector<int> data){
     const auto start = std::chrono::steady_clock::now(); //start of time
     std::unordered_map<int,int> hashmap;
     for(int i = 0; i < data.size(); i++){

@@ -47,7 +47,7 @@ void quickSelectRecursion(std::vector<int> &data, int left, int right, std::vect
         insertionSort(data,left, right);
     }
 }
-void quickSelect2 (const std::string & header, std::vector<int> data){
+void QuickSelect2 (const std::string & header, std::vector<int> data){
     const auto start = std::chrono::steady_clock::now(); //start of time
     std::vector<int> keys = {1,static_cast<int>(data.size() * .25),static_cast<int>(data.size() * .50),static_cast<int>(data.size() * .75),static_cast<int>(data.size())};
     quickSelectRecursion(data, 0, data.size() - 1, keys); // Index of the 50th percentile 
