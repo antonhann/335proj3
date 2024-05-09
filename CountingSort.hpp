@@ -10,6 +10,6 @@
 #include <algorithm>
 #include <chrono>
 #include <unordered_map>
-void CountingSort (const std::string & header, std::vector<int> data);
+void countingSort(const std::string & header, std::vector<int> data);
 
 #endif 
