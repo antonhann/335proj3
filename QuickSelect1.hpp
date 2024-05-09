@@ -12,7 +12,7 @@
 #include "InsertionSort.hpp"
 const int & median3One( std::vector<int> & a, int left, int right );
 void quickSelect(std::vector<int> &data, int left, int right, int k);
-void QuickSelect1 (const std::string & header, std::vector<int> data);
+void quickSelect1  (const std::string & header, std::vector<int> data);
 
 
 #endif 

@@ -26,8 +26,8 @@ int main (){
         data.push_back(stoi(input));
     }
     stdSort(header, data);
-    quickSelect1(header, data);
-    quickSelect2(header, data);
+    QuickSelect1(header, data);
+    QuickSelect1(header, data);
     countingSort(header,data);
 }
 
