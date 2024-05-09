@@ -1,6 +1,6 @@
 #include "InsertionSort.hpp"
 
-void insertionSort (std::vector<int>& data, int left, int right){
+void InsertionSort (std::vector<int>& data, int left, int right){
     int j;
     for(int i = left + 1; i <= right; i++){
         j = i;
