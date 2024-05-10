@@ -1,5 +1,9 @@
 #include "QuickSelect1.hpp"
-
+/**
+ * @brief swaps the median to the pivot spot
+ * 
+ * @param: vector of ints of the dataset, int left index, int right index
+ */
 const int & median3One( std::vector<int> & a, int left, int right )
 {
     int center = ( left + right ) / 2;
@@ -13,8 +17,14 @@ const int & median3One( std::vector<int> & a, int left, int right )
     std::swap( a[ center ], a[ right - 1 ] );
     return a[ right - 1 ];
 }
-
+/**
+ * @brief quick select algorithm but when the left and right index reaches <= 20,
+ * we do insertion sort on the corresponding portion of the data
+ * 
+ * @param: vector of ints of the dataset, int left index, int right index, int key index
+ */
 void quickSelect(std::vector<int> &data, int left, int right, int k){
+    //if size > 20
     if(left + 20 <= right){
         const int pivot = median3One(data,left,right);
         int i = left;
@@ -35,22 +45,29 @@ void quickSelect(std::vector<int> &data, int left, int right, int k){
             quickSelect(data,i + 1, right, k);
         }
     }else{
-        InsertionSort(data,left, right);
+        insertionSort(data,left, right);
     }
 }
-
+/**
+ * @brief calls quick select three times on the 25,50,75 percentile
+ * and then get the min and max
+ * 
+ * @param: string of header, vector of ints of the dataset
+ */
 void quickSelect1  (const std::string & header, std::vector<int> data){
-    const auto start = std::chrono::steady_clock::now(); //start of time
-    quickSelect(data, 0, data.size() - 1, data.size() * .50); // Index of the 50th percentile 
-    quickSelect(data, 0, data.size() * .50 - 2, data.size() * .25); // Index of the 25th percentile
-    quickSelect(data, data.size() * .50 + 1, data.size() - 1, data.size() * .75); // Index of the 75th percentile
+    //const auto start = std::chrono::steady_clock::now(); //start of time
+    quickSelect(data, 0, data.size() - 1, data.size() * .50); // 50th percentile 
+    quickSelect(data, 0, data.size() * .50 - 2, data.size() * .25); //25th percentile
+    quickSelect(data, data.size() * .50 + 1, data.size() - 1, data.size() * .75); //75th percentile
     int min = data[0];
     int max = data[0];
+    //get the min
     for(int i = 0; i < data.size() * .25; i++){
         if(data[i] < min){
             min = data[i];
         }
     }
+    //get max
     for(int i = data.size() * .75 + 1; i < data.size(); i++){
         if(data[i] > max){
             max = data[i];
@@ -64,6 +81,6 @@ void quickSelect1  (const std::string & header, std::vector<int> data){
     std::cout << "Max: " << max << std::endl;
     // const auto end = std::chrono::steady_clock::now(); //end time
     // int time = std::chrono::duration <double, std::micro> (end - start).count(); //time to complete instructions
-    // std::cout << "Std Sort ran in "<<  time << " microseconds." << std::endl;
+    // std::cout << "QuickSelect One: "<<  time << " microseconds." << std::endl;
 }
 
